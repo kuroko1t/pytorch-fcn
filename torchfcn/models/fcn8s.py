@@ -19,10 +19,10 @@ class FCN8s(nn.Module):
             md5='dbd9bbb3829a3184913bccc74373afbb',
         )
 
-    def __init__(self, n_class=21):
+    def __init__(self, n_class=21, n_channel=3):
         super(FCN8s, self).__init__()
         # conv1
-        self.conv1_1 = nn.Conv2d(3, 64, 3, padding=100)
+        self.conv1_1 = nn.Conv2d(n_channel, 64, 3, padding=100)
         self.relu1_1 = nn.ReLU(inplace=True)
         self.conv1_2 = nn.Conv2d(64, 64, 3, padding=1)
         self.relu1_2 = nn.ReLU(inplace=True)
